@@ -6,7 +6,7 @@
             var iframe;
             iframe = document.querySelector("iframe");
             waitUntilChromeAutofocuses(iframe);
-            iframe.src = _this.host + "/a/signin?service=chrome.google.com";
+            iframe.src = _this.host + "/signin?service=chrome.google.com";
             return iframe.addEventListener("load", function() {
                 return iframe.classList.add("is-loaded");
             });
