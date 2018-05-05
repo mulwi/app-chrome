@@ -1,0 +1,52 @@
+<head>
+    <script src="js/config.js" async></script>
+    <script src="js/iframe.js" async></script>
+</head>
+<body>
+<div class="spinner"></div>
+<iframe></iframe>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        width: 800px;
+        height: 600px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        visibility: hidden;
+        z-index: 10;
+        position: relative;
+    }
+
+    iframe.is-loaded {
+        visibility: visible;
+    }
+
+    .spinner {
+        position: absolute;
+        display: block;
+        border: 2px solid #007ace;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spin 1.1s infinite linear;
+        width: 50px;
+        height: 50px;
+        top: 100px;
+        left: 45%;
+        z-index: 5;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+</body>

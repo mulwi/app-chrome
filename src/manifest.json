@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Mulwi Search",
+  "short_name": "Mulwi",
+  "description": "Mulwi Search is secure and fast search across all your sources in one place including Google Drive, Zendesk, Asana, Magento and more",
+  "omnibox": {
+      "keyword": "m"
+  },
+  "background": {
+    "scripts": [ "js/background.js" ]
+  },
+  "version": "0.0.1",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  }
+}
