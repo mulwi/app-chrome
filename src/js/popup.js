@@ -1,20 +1,23 @@
-(function() {
+(function () {
+
     var waitUntilChromeAutofocuses;
 
-    window.addEventListener("load", (function(_this) {
-        return function() {
+    window.addEventListener("load", (function (_this) {
+        return function () {
             var iframe;
             iframe = document.querySelector("iframe");
             waitUntilChromeAutofocuses(iframe);
             iframe.src = _this.host + "/signin?service=chrome.google.com&min=1";
-            return iframe.addEventListener("load", function() {
+            return iframe.addEventListener("load", function () {
                 return iframe.classList.add("is-loaded");
             });
         };
     })(this));
 
-    waitUntilChromeAutofocuses = function(element) {
+    waitUntilChromeAutofocuses = function (element) {
         return element.getBoundingClientRect().width;
     };
 
+
 }).call(this);
+

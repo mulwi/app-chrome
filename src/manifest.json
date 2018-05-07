@@ -9,14 +9,15 @@
   "background": {
     "scripts": [ "js/background.js" ]
   },
+  "content_scripts": [{
+    "matches": [ "\u003Call_urls>" ],
+    "js": ["js/content.js"]
+  }],
   "version": "0.0.1",
-  "permissions": [
-    "storage",
-    "activeTab"
-  ],
+  "permissions": [ "\u003Call_urls>", "tabs", "storage", "webRequest", "webRequestBlocking" ],
   "browser_action": {
-    "default_icon": "images/icon.png",
-    "default_popup": "popup.html"
+    "default_icon": "images/icon.png"
+//    "default_popup": "popup.html"
   },
   "icons": {
     "16": "images/icon.png",
