@@ -1,21 +1,18 @@
-var searchSrc = "https://mulwi.com/singin/?q=";
+import Omnibox from "./services/omnibox"
+import ContextMenu from "./services/contextMenu"
 
-chrome.omnibox.onInputEntered.addListener(
-    function (text) {
-        var url = searchSrc + encodeURIComponent(text);
-        chrome.tabs.create({url: url});
-    }
-);
+new Omnibox()
+new ContextMenu()
 
 chrome.browserAction.onClicked.addListener(function (a) {
-    var b = a.id;
+    const b = a.id as number
     chrome.tabs.executeScript(b, {
-        code: "window.__Mulwi.toggle()",
+        code: "window.$content.toggle()",
     })
 });
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
-    var d = changeInfo.url || tab.url || !1;
+    const d = changeInfo.url || tab.url || !1
     d && ((/^chrome\-extension:\/\//.test(d) || /^chrome:\/\//.test(d)) && chrome.browserAction.setPopup({
         tabId: tabId,
         popup: "popup.html#local"
@@ -24,3 +21,10 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
         popup: "popup.html#webstore"
     }))
 });
+
+// document.addEventListener('mulwiLoaderComplete', function(e) {
+//     console.log(e)
+//     console.log((e as any).detail)
+//     console.log((e as any).window.$mulwi)
+// })
+

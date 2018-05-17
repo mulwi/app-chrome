@@ -4,25 +4,39 @@
   "short_name": "Mulwi",
   "description": "Mulwi Search is secure and fast search across all your sources in one place including Google Drive, Zendesk, Asana, Magento and more",
   "omnibox": {
-      "keyword": "m"
+    "keyword": "m"
   },
   "background": {
-    "scripts": [ "js/background.js" ]
+    "scripts": [
+      "background.js"
+    ]
   },
-  "content_scripts": [{
-    "matches": [ "\u003Call_urls>" ],
-    "js": ["js/content.js"]
-  }],
+  "content_scripts": [
+    {
+      "matches": [
+        "\u003Call_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
   "version": "0.0.1",
-  "permissions": [ "\u003Call_urls>", "tabs", "storage", "webRequest", "webRequestBlocking" ],
+  "permissions": [
+    "contextMenus",
+    "\u003Call_urls>",
+    "tabs",
+    "storage",
+    "webRequest",
+    "webRequestBlocking"
+  ],
   "browser_action": {
-    "default_icon": "images/icon.png"
-//    "default_popup": "popup.html"
+    "default_icon": "assets/images/icon.png"
   },
   "icons": {
-    "16": "images/icon.png",
-    "32": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "assets/images/icon.png",
+    "32": "assets/images/icon.png",
+    "48": "assets/images/icon.png",
+    "128": "assets/images/icon.png"
   }
 }
